@@ -51,7 +51,7 @@ class Record(object):
 
         # Support for string-based lookup.
         if key in self.keys():
-            i = self.keys().index(key)
+            i = list(self.keys()).index(key)
             if self.keys().count(key) > 1:
                 raise KeyError("Record contains multiple '{}' fields.".format(key))
             return self.values()[i]
